@@ -1,0 +1,18 @@
+{
+  "name": "emergency-vompliment",
+  "version": "2.0.0",
+  "description": "For when you really need a quick compliment.",
+  "main": "index.html",
+  "private": true,
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jade": "^0.11.0",
+    "grunt-contrib-compass": "^0.8.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-contrib-clean": "^0.5.0",
+    "grunt-contrib-connect": "^0.7.1"
+  },
+  "author": "Nate Beatty <nate.beatty@gmail.com>",
+  "license": "All rights reserved."
+}
