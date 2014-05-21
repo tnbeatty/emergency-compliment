@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             },
             compass: {
                 files: ['src/**/*.sass', 'src/**/*.scss'],
-                tasks: ['compass']
+                tasks: ['compass:styles']
             }
         },
         jade: {
@@ -87,9 +87,11 @@ module.exports = function(grunt) {
                 dest: 'site/fonts/icons'
             }
         },
-        // clean: {
-        //
-        // }
+        clean: {
+            site: {
+                src: ['site/**/*']
+            }
+        }
 
     });
 
@@ -102,6 +104,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('build', [
+        'clean',
         'jade',
         'compass',
         'copy',
