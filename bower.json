@@ -1,0 +1,6 @@
+{
+  "name": "emergency-compliment",
+  "dependencies": {
+    "gumby": "~2.6.3"
+  }
+}

@@ -36,9 +36,57 @@ module.exports = function(grunt) {
                 }]
             },
         },
-        // compass: {
-        //
-        // },
+        compass: {
+            gumby: {
+                options: {
+                    require: ['modular-scale', 'sassy-math'],
+                    sassDir: 'bower_components/gumby/sass',
+                    cssDir: 'tmp/css',
+                    environment: 'production'
+                }
+            },
+            styles: {
+                options: {
+                    sassDir: 'src/sass',
+                    cssDir: 'tmp/css',
+                    environment: 'production'
+                }
+            }
+        },
+        concat: {
+            styles: {
+                options: {
+                    stripBanners: true
+                },
+                files: {
+                    'site/css/styles.css': [
+                        'tmp/css/gumby.css',
+                        'tmp/css/styles.css'
+                    ]
+                }
+            },
+            gumbyjs: {
+                options: {
+                    separator: ';',
+                },
+                files: {
+                    'site/js/gumby.min.js': [
+                        'bower_components/gumby/js/libs/gumby.min.js'
+                    ],
+                    'site/js/modernizr.js': [
+                        'bower_components/gumby/js/libs/modernizr-2.6.2.min.js'
+                    ]
+                }
+            }
+        },
+        copy: {
+            entypo: {
+                expand: true,
+                cwd: 'bower_components/gumby/fonts/icons',
+                src: ['**'],
+                dest: 'site/fonts/icons'
+            }
+        },
         // clean: {
         //
         // }
@@ -50,10 +98,17 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
-    grunt.registerTask('build', ['jade']);
+    grunt.registerTask('build', [
+        'jade',
+        'compass',
+        'copy',
+        'concat'
+    ]);
 
-    grunt.registerTask('serve', ['connect', 'watch']);
+    grunt.registerTask('serve', ['build', 'connect', 'watch']);
 
     grunt.registerTask('default', 'build');
 };

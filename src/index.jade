@@ -3,8 +3,16 @@ doctype html
 html
     head
         title Emergency Compliment
-        //- link(rel='stylesheet', href='css/styles.css')
+        link(rel='stylesheet', href='css/styles.css')
+        script(src='js/modernizr.js')
     body
-        h1 Emergency Compliment
+        .row.navbar.metro#mainnav
+            a.toggle(gumby-trigger='#mainnav > ul', href='#'): i.icon-menu
+            h3.six.columns: a(href='/index.html') Emergency Compliment
+            .three.columns: &nbspl
+            ul.three.columns
+                li: a(href='#') About
+                li: a(href='#') Store
 
-    //- script(src='js/main.js')
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+        script(src='js/gumby.min.js')
