@@ -1,7 +1,7 @@
 Emergency Compliment
 ===
 
-* Test Site:
+* Test Site: [tnbeatty.github.io/emergency-compliment](http://tnbeatty.github.io/emergency-compliment)
 * Production Site: [emergencycompliment.com](http://emergencycompliment.com)
 
 Development

@@ -19,7 +19,7 @@ module.exports = function(grunt) {
             },
             compass: {
                 files: ['src/**/*.sass', 'src/**/*.scss'],
-                tasks: ['compass:styles']
+                tasks: ['compass:styles', 'concat:styles']
             }
         },
         jade: {
@@ -89,8 +89,11 @@ module.exports = function(grunt) {
         },
         clean: {
             site: {
-                src: ['site/**/*']
+                src: ['site']
             }
+        },
+        exec: {
+            deploydev: 'git subtree push --prefix site origin gh-pages'
         }
 
     });
@@ -103,6 +106,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-copy');
 
+    grunt.loadNpmTasks('grunt-exec');
+
     grunt.registerTask('build', [
         'clean',
         'jade',
@@ -112,6 +117,7 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('serve', ['build', 'connect', 'watch']);
+    grunt.registerTask('deploydev', ['build', 'exec:deploydev']);
 
     grunt.registerTask('default', 'build');
 };

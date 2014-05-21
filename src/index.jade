@@ -8,11 +8,21 @@ html
     body
         .row.navbar.metro#mainnav
             a.toggle(gumby-trigger='#mainnav > ul', href='#'): i.icon-menu
-            h3.six.columns: a(href='/index.html') Emergency Compliment
-            .three.columns: &nbspl
+            h3.six.columns#logo: a(href='/index.html') emergency compliment
+            .three.columns: &nbsp;
             ul.three.columns
-                li: a(href='#') About
-                li: a(href='#') Store
+                li: h4: a(href='#') about
+                li: h4: a(href='#') store
+        .row
+            .seven.columns.centered
+                p.compliment
+                    | The kid you passed on the street today wants to grow up to be like you.
+        .row#actionbtns
+            .seven.columns.centered
+                
+                .large.default.btn: a(href='#') Thanks!
+
+                .large.default.btn: a(href='#') Meh.
 
         script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
         script(src='js/gumby.min.js')
