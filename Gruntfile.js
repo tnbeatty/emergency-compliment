@@ -20,6 +20,10 @@ module.exports = function(grunt) {
             compass: {
                 files: ['src/**/*.sass', 'src/**/*.scss'],
                 tasks: ['compass:styles', 'concat:styles']
+            },
+            scripts: {
+                files: ['src/**/*.js'],
+                tasks: ['concat:scripts']
             }
         },
         jade: {
@@ -63,6 +67,14 @@ module.exports = function(grunt) {
                         'tmp/css/gumby.css',
                         'tmp/css/styles.css'
                     ]
+                }
+            },
+            scripts: {
+                options: {
+                    stripBanners: true
+                },
+                files: {
+                    'site/js/main.js': ['src/js/main.js']
                 }
             },
             gumbyjs: {

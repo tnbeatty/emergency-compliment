@@ -2,6 +2,9 @@ doctype html
 
 html
     head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1, maximum-scale=1')
+
         title Emergency Compliment
         link(rel='stylesheet', href='css/styles.css')
         script(src='js/modernizr.js')
@@ -16,13 +19,14 @@ html
         .row
             .seven.columns.centered
                 p.compliment
-                    | The kid you passed on the street today wants to grow up to be like you.
+                    | loading...
         .row#actionbtns
             .seven.columns.centered
-                
-                .large.default.btn: a(href='#') Thanks!
 
-                .large.default.btn: a(href='#') Meh.
+                .large.default.btn#thanksbtn: a(href='#') Thanks!
+
+                .large.default.btn#mehbtn: a(href='#') Meh.
 
         script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
         script(src='js/gumby.min.js')
+        script(src='js/main.js')
