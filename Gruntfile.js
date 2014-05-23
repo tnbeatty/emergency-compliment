@@ -130,6 +130,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('serve', ['build', 'connect', 'watch']);
     grunt.registerTask('deploydev', ['build', 'exec:deploydev']);
+    grunt.registerTask('publish', ['deploydev']);
 
     grunt.registerTask('default', 'build');
 };
