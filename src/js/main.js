@@ -18,7 +18,7 @@ var refreshCompliments = function() {
     var cors = (true) ? 'cors.io/' : '';
     $.getJSON('http://' + cors + 'spreadsheets.google.com/feeds/list/' + pubkey +
         '/od6/public/values?alt=json', function(data) {
-
+            compliments = [];
             for(var i = 0; i < data.feed.entry.length; i++) {
                 compliments.push(data.feed.entry[i]['gsx$compliments']['$t']);
             }

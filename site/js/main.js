@@ -34,6 +34,6 @@ var showNewCompliment = function() {
 }
 
 $(document).ready(function() {
-    $('#mehbtn').click(refreshCompliments);
+    $('#mehbtn').click(showNewCompliment);
     refreshCompliments();
 });
