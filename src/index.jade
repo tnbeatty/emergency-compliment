@@ -12,10 +12,12 @@ html
         .row.navbar.metro#mainnav
             a.toggle(gumby-trigger='#mainnav > ul', href='#'): i.icon-menu
             h3.six.columns#logo: a(href='/index.html') emergency compliment
-            .three.columns: &nbsp;
-            ul.three.columns
+            ul.six.columns
                 li: h4: a(href='#') about
                 li: h4: a(href='#') store
+                li: h2: a(href='#'): i.icon-twitter
+                li: h2: a(href='#'): i.icon-instagram
+                li: h2: a(href='#'): i.icon-tumblr
         .row
             .seven.columns.centered
                 p.compliment
@@ -26,6 +28,15 @@ html
                 .large.default.btn#thanksbtn: a(href='#') Thanks!
 
                 .large.default.btn#mehbtn: a(href='#') Meh.
+
+        //- MODAL WINDOWS
+
+        .modal#buythebook
+            .content
+                a.close.switch(gumby-trigger='|#buythebook'): i.icon-cancel
+                .row
+                    .ten.columns.centered.text-center
+                        p Know what's better than compliments from a website? Compliments from <a href="#">a book!</a>
 
         script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
         script(src='js/gumby.min.js')

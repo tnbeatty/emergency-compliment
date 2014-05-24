@@ -1,3 +1,5 @@
+/* GLOBAL VARIABLES */
+
 // Load a few standard compliments, just in case the live list reload ceases to work.
 var compliments = [
     'You\'re funny. Like, LOL style.',
@@ -5,13 +7,15 @@ var compliments = [
     'You think of the funniest names for wi-fi networks.',
     'People at trivia night are terrified of you.'
 ];
+var clickcounter = 0;
+
 
 var refreshCompliments = function() {
     var pubkey = '1eEa2ra2yHBXVZ_ctH4J15tFSGEu-VTSunsrvaCAV598';
     var cors = (true) ? 'cors.io/' : '';
     $.getJSON('http://' + cors + 'spreadsheets.google.com/feeds/list/' + pubkey +
         '/od6/public/values?alt=json', function(data) {
-
+            compliments = [];
             for(var i = 0; i < data.feed.entry.length; i++) {
                 compliments.push(data.feed.entry[i]['gsx$compliments']['$t']);
             }
@@ -33,7 +37,31 @@ var showNewCompliment = function() {
     $('.compliment').text(newCompliment);
 }
 
+var countClick = function() {
+    clickcounter++;
+    if (clickcounter == 3) {
+        showPurchaseWindow(true);
+    }
+}
+
+var showPurchaseWindow = function(shouldShow) {
+    if (shouldShow) {
+        $('.modal#buythebook').addClass('active');
+    } else {
+        $('.modal#buythebook').removeClass('active');
+    }
+}
+
 $(document).ready(function() {
-    $('#mehbtn').click(showNewCompliment);
+
+    $('#mehbtn').click(function() {
+        showNewCompliment();
+        countClick();
+    });
+
+    $('.modal#buythebook').click(function() {
+        // showPurchaseWindow(false);
+    });
+
     refreshCompliments();
 });
