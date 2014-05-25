@@ -1,0 +1,27 @@
+doctype html
+
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width,initial-scale=1, maximum-scale=1')
+
+        block head
+
+        link(rel='stylesheet', href='css/styles.css')
+        script(src='js/modernizr.js')
+    body
+        .row.navbar.metro#mainnav
+            a.toggle(gumby-trigger='#mainnav > ul', href='#'): i.icon-menu
+            h3.six.columns#logo: a(href='/index.html') emergency compliment
+            ul.six.columns
+                li: h4: a(href='about.html') about
+                li: h4: a(href='store.html') store
+                li: h2: a(href='https://twitter.com/EmergCompliment'): i.icon-twitter
+                li: h2: a(href='#'): i.icon-instagram
+                li: h2: a(href='#'): i.icon-tumblr
+
+        block body
+
+        script(src='//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js')
+        script(src='js/gumby.min.js')
+        script(src='js/main.js')
