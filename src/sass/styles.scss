@@ -1,6 +1,11 @@
 @import "compass/css3";
 
-$bg-pink-color: #e10079;
+$bg-color: #e10079;
+$bg-purple-color: #9966ff;
+
+body {
+    background: $bg-purple-color;
+}
 
 #mainnav {
     #logo {
@@ -12,7 +17,7 @@ $bg-pink-color: #e10079;
     ul {
         li {
 
-            background: $bg-pink-color;
+            background: inherit;
 
             h2,h3,h4 {
                 a {
@@ -61,9 +66,11 @@ $bg-pink-color: #e10079;
 }
 
 .modal#buythebook {
+    background: inherit;
+
     .content {
         border: #fff solid 0.15em;
-        background: $bg-pink-color;
+        background: inherit;
         z-index: 1000;
 
         a.close.switch {
