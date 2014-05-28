@@ -8,6 +8,14 @@ var compliments = [
     'People at trivia night are terrified of you.'
 ];
 var clickcounter = 0;
+var backgroundColors = [
+    '#0080ff',
+    '#ffbf00',
+    '#01df3a',
+    '#ff0080',
+    '#9966ff',
+    '#ff0033'
+];
 
 
 var refreshCompliments = function() {
@@ -33,6 +41,7 @@ var refreshCompliments = function() {
 }
 
 var showNewCompliment = function() {
+    setRandomBackground();
     var newCompliment = compliments[Math.floor(Math.random()*compliments.length)];
     $('.compliment').text(newCompliment);
 }
@@ -52,7 +61,14 @@ var showPurchaseWindow = function(shouldShow) {
     }
 }
 
+var setRandomBackground = function() {
+    var bgcolor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)];
+    $('body').css('background-color', bgcolor);
+}
+
 $(document).ready(function() {
+
+    setRandomBackground();
 
     $('#mehbtn').click(function() {
         showNewCompliment();
