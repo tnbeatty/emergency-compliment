@@ -8,6 +8,9 @@ body {
     background: $bg-purple-color;
 }
 
+// Navbar styles relocated to the custom grunt sass file:
+//    `bower_components/grunt/sass/_custom.scss`
+
 .compliment {
     padding-top: 20%;
     text-align: center;

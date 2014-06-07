@@ -21,3 +21,5 @@ Development Dependencies:
 ### Contributing
 
 Run `$ grunt serve` to build the site, watch for changes, and fire up a local server.
+
+Run `$ grunt publish` to push the site directory to the gh-pages branch and publish the built site to the test repo.
