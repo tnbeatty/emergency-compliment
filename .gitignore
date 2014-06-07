@@ -1,8 +1,26 @@
 # System Files
+###################
+
 .DS_Store
 
 # Generated Files
+###################
+
 node_modules
-bower_components
 .sass-cache
 tmp
+
+# Gumby
+###################
+
+!bower_components/
+
+bower_components/*
+!bower_components/gumby
+
+bower_components/gumby/*
+!bower_components/gumby/sass
+
+bower_components/gumby/sass/*
+!bower_components/gumby/sass/_custom.scss
+!bower_components/gumby/sass/var

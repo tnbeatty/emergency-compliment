@@ -64,6 +64,7 @@ var showPurchaseWindow = function(shouldShow) {
 var setRandomBackground = function() {
     var bgcolor = backgroundColors[Math.floor(Math.random()*backgroundColors.length)];
     $('body').css('background-color', bgcolor);
+    $('li').css('background-color', bgcolor);
 }
 
 $(document).ready(function() {

@@ -1,36 +1,11 @@
 @import "compass/css3";
 
 $bg-color: #e10079;
+$bg-pink-color: #0080ff;
 $bg-purple-color: #9966ff;
 
 body {
     background: $bg-purple-color;
-}
-
-#mainnav {
-    #logo {
-        a {
-            color: #fff;
-            font-weight: 800;
-        }
-    }
-    ul {
-        li {
-
-            background: inherit;
-
-            h2,h3,h4 {
-                a {
-                    color: #fff;
-                    font-weight: 800;
-                    border-bottom: #fff solid 0.15em;
-                }
-            }
-            h2,h3 {
-                a { border-bottom: none; }
-            }
-        }
-    }
 }
 
 .compliment {
@@ -39,14 +14,6 @@ body {
     font-size: 3em;
     font-weight: 600;
     color: #fff;
-
-    // position: absolute;
-    // top:0;
-    // bottom: 0;
-    // left: 0;
-    // right: 0;
-    // height: 200px;
-    // margin: auto;
 }
 
 #actionbtns {
@@ -90,5 +57,23 @@ body {
                 border-bottom: #fff solid 0.15em;
             }
         }
+    }
+}
+
+#about {
+    p {
+        font-size: 1.3em;
+        line-height: 1.5em;
+        color: #fff;
+        font-weight: 800;
+        margin-bottom: 20px;
+        a {
+            font-weight: inherit;
+            color: inherit;
+            border-bottom: #fff solid 0.1em;
+        }
+    }
+    .columns {
+        padding: 15px;
     }
 }

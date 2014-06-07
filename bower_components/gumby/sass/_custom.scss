@@ -1,0 +1,31 @@
+// Your custom SCSS should be written here...
+@import "compass/css3";
+
+#mainnav {
+    .logo {
+        font-size: 1.5em;
+        font-weight: 800;
+        color: #fff;
+        a {
+            color: inherit;
+            font-weight: inherit;
+            font-size: inherit;
+        }
+    }
+    ul {
+        li {
+            a {
+                border-bottom: none;
+                @include respond(all-phones) { margin: 0 20px; border: 2px solid #fff;}
+
+                font-size: 1.5em;
+                &:hover { background: inherit; }
+            }
+            &:last-child {
+                a {
+                    @include respond (all-phones) { border-bottom: 2px solid #fff; }
+                }
+            }
+        }
+    }
+}
