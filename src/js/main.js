@@ -80,15 +80,18 @@ var resetCSS = function() {
 }
 
 $(document).ready(function() {
-    console.log(window.location.pathname);
 
-    if (['/', '/index.html'].indexOf(window.location.pathname) >= 0) {
+    var loc = (window.location.pathname.split('/').length > 0) ? window.location.pathname.split('/').reverse()[0] : '/index.html';
+    if (loc == '') loc = '/';
+    console.log(loc);
+
+    if (['','/', '/index.html', 'index.html'].indexOf(loc) >= 0) {
         console.log('Index page setup');
         refreshCompliments();
-    } else if (['/about.html'].indexOf(window.location.pathname) >= 0) {
+    } else if (['/about.html', 'about.html'].indexOf(loc) >= 0) {
         console.log('About page setup');
         $('html').addClass('aboutpage');
-    } else if (['/store.html'].indexOf(window.location.pathname) >= 0) {
+    } else if (['/store.html', 'store.html'].indexOf(loc) >= 0) {
         console.log('About page setup');
         $('html').removeClass();
         $('html').addClass('storepage');
@@ -106,7 +109,7 @@ $(document).ready(function() {
     });
 
     // Assign Listeners (STORE)
-    
+
     $('.posterlink').hover(
         function() {
             $('.posterpgph').show();
