@@ -74,9 +74,27 @@ var setRandomBackground = function() {
     $('li').css('background-color', bgcolor);
 }
 
-$(document).ready(function() {
+var resetCSS = function() {
+    // $('body').css();
+    // $('li').css();
+}
 
-    setRandomBackground();
+$(document).ready(function() {
+    console.log(window.location.pathname);
+
+    if (['/', '/index.html'].indexOf(window.location.pathname) >= 0) {
+        console.log('Index page setup');
+        refreshCompliments();
+    } else if (['/about.html'].indexOf(window.location.pathname) >= 0) {
+        console.log('About page setup');
+        $('html').addClass('aboutpage');
+    } else if (['/store.html'].indexOf(window.location.pathname) >= 0) {
+        console.log('About page setup');
+        $('html').removeClass();
+        $('html').addClass('storepage');
+    }
+
+    // Assign Listeners (INDEX)
 
     $('#mehbtn').click(function() {
         showNewCompliment();
@@ -87,5 +105,24 @@ $(document).ready(function() {
         // showPurchaseWindow(false);
     });
 
-    refreshCompliments();
+    // Assign Listeners (STORE)
+    
+    $('.posterlink').hover(
+        function() {
+            $('.posterpgph').show();
+        },
+        function() {
+            $('.posterpgph').hide();
+        }
+    );
+
+    $('.booklink').hover(
+        function() {
+            $('.bookpgph').show();
+        },
+        function() {
+            $('.bookpgph').hide();
+        }
+    );
+
 });

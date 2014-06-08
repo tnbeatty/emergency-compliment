@@ -2,6 +2,8 @@
 @import "compass/css3";
 
 #mainnav {
+    color: inherit;
+
     .logo {
         font-size: 1.5em;
         font-weight: 800;
@@ -15,8 +17,6 @@
     ul {
         li {
             a {
-                // &.textlink { border-bottom: 2px solid #fff; }
-
                 @include respond(all-phones) {
                     margin: 0 20px;
                     border: 4px solid #fff;
