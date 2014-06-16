@@ -67,11 +67,6 @@ var setRandomBackground = function() {
     $('li').css('background-color', bgcolor);
 }
 
-var resetCSS = function() {
-    // $('body').css();
-    // $('li').css();
-}
-
 $(document).ready(function() {
 
     var loc = (window.location.pathname.split('/').length > 0) ? window.location.pathname.split('/').reverse()[0] : '/index.html';
@@ -90,6 +85,9 @@ $(document).ready(function() {
         $('html').addClass('storepage');
     }
 
+    // $('body').css('background-color', bgcolor);
+    $('li').css('background-color', $('body').css('background-color'));
+
     // Assign Listeners (INDEX)
 
     $('#mehbtn').click(function() {
@@ -104,20 +102,20 @@ $(document).ready(function() {
     // Assign Listeners (STORE)
 
     $('.posterlink').hover(
-        function() {
-            $('.posterpgph').show();
+        function() { // show
+            $('#togglepviz').css('visibility', 'visible');
         },
-        function() {
-            $('.posterpgph').hide();
+        function() { // hide
+            $('#togglepviz').css('visibility', 'hidden');
         }
     );
 
     $('.booklink').hover(
-        function() {
-            $('.bookpgph').show();
+        function() { // show
+            $('#togglebviz').css('visibility', 'visible');
         },
-        function() {
-            $('.bookpgph').hide();
+        function() { // hide
+            $('#togglebviz').css('visibility', 'hidden');
         }
     );
 

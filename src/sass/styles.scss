@@ -112,8 +112,6 @@ body {
     }
     #bookbox {
         height: 230px;
-        width: 350px;
-        margin: 90px auto 20px;
         p {
             font-size: 0.7em;
             line-height: 1.0em;
@@ -131,7 +129,14 @@ body {
             }
         }
     }
-    .bookpgph, .posterpgph { display: none; }
+    #togglepviz, #togglebviz { visibility: hidden; }
+    .showmobile {
+        .posterpgph, .bookpgph {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
     .columns {
         padding: 50px 15px;
         text-align: center;

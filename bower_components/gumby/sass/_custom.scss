@@ -36,3 +36,29 @@
         }
     }
 }
+
+#bookbox {
+    margin: 90px auto 20px;
+    width: 350px;
+
+    @include respond(all-phones) {
+        margin-top: 0;
+    }
+    @include respond(portrait-phones) {
+        width: 300px;
+    }
+}
+.showmobile {
+    display: none;
+
+    @include respond(all-phones) {
+        display: block;
+    }
+}
+.hidemobile {
+    display: block;
+
+    @include respond(all-phones) {
+        display: none;
+    }
+}

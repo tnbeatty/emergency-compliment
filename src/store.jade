@@ -9,7 +9,8 @@ block body
             a.posterlink(href='#'): #posterbox
                 p you could be an astronaut if you wanted, NASA told me so
             a.posterlink(href='#') posters
-            p.posterpgph As well as cell phone cases, stationery and fancy canvas thingies!
+            .hidemobile: p.posterpgph#togglepviz As well as cell phone cases, stationery and fancy canvas thingies!
+            .showmobile: p.posterpgph As well as cell phone cases, stationery and fancy canvas thingies!
 
         .six.columns
             a.booklink(href='#'): #bookbox
@@ -17,4 +18,5 @@ block body
                 p.small 60 nice things you never would have throught to say<br>(that might just save the day)
                 p.small.author Megs Senk
             a.booklink(href='#') the book
-            p.bookpgph Compliments you can hold in your hand! Or tear out and give to friends!
+            .hidemobile: p.bookpgph#togglebviz Compliments you can hold in your hand! Or tear out and give to friends!
+            .showmobile: p.bookpgph Compliments you can hold in your hand! Or tear out and give to friends!
