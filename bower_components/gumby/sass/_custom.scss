@@ -1,6 +1,10 @@
 // Your custom SCSS should be written here...
 @import "compass/css3";
 
+$bg-default-color: #0080ff;
+$bg-pink-color: #ff0080;
+$bg-purple-color: #9966ff;
+
 #mainnav {
     color: inherit;
 
@@ -8,6 +12,10 @@
         font-size: 1.5em;
         font-weight: 800;
         color: #fff;
+
+        @include respond(portrait-phones) {
+            font-size: 1.3em;
+        }
         a {
             color: inherit;
             font-weight: inherit;
@@ -37,6 +45,67 @@
     }
 }
 
+.compliment {
+    padding-top: 20%;
+    text-align: center;
+    font-size: 3em;
+    font-weight: 600;
+
+    @include respond(all-phones) {
+        font-size: 2em;
+        padding-top: 10px;
+    }
+}
+
+#actionbtns {
+    padding-top: 2em;
+    text-align: center;
+
+    @include respond(all-phones) {
+        padding-top: 1em;
+    }
+    .btn {
+        min-width: 160px;
+        margin: 10px;
+        background: none;
+        border: #fff solid 0.15em;
+        @include box-sizing(border-box);
+        a {
+            font-weight: 800;
+        }
+    }
+}
+
+.modal#buythebook {
+    background: inherit;
+
+    .content {
+        border: #fff solid 0.15em;
+        background: inherit;
+        z-index: 1000;
+
+        a.close.switch {
+            font-size: 2em;
+            font-weight: 500;
+        }
+
+        p {
+            font-size: 2.5em;
+            font-weight: 800;
+
+            @include respond(all-phones) {
+                font-size: 1.8em;
+            }
+
+            a {
+                font-weight: inherit;
+                color: inherit;
+                border-bottom: #fff solid 0.15em;
+            }
+        }
+    }
+}
+
 #bookbox {
     margin: 90px auto 20px;
     width: 350px;
@@ -45,7 +114,7 @@
         margin-top: 0;
     }
     @include respond(portrait-phones) {
-        width: 300px;
+        width: 250px;
     }
 }
 .showmobile {
@@ -60,5 +129,67 @@
 
     @include respond(all-phones) {
         display: none;
+    }
+}
+
+#store {
+    #posterbox, #bookbox {
+        display: block;
+        background: $bg-pink-color;
+    }
+    #posterbox {
+        height: 300px;
+        width: 230px;
+        margin: 20px auto 20px;
+        p {
+            font-size: 0.8em;
+            line-height: 1.3em;
+            font-weight: 800;
+            color: #fff !important;
+            text-align: left;
+            padding: 15px;
+        }
+    }
+    #bookbox {
+        height: 230px;
+        p {
+            font-size: 0.7em;
+            line-height: 1.0em;
+            font-weight: 800;
+            color: #fff !important;
+            text-align: left;
+            padding: 15px;
+            margin-bottom: 0;
+            &.small {
+                padding: 0 15px;
+                font-size: 0.32em;
+            }
+            &.author {
+                margin-top: 110px;
+            }
+        }
+    }
+    #togglepviz, #togglebviz { visibility: hidden; }
+    .showmobile {
+        .posterpgph, .bookpgph {
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    }
+    .columns {
+        padding: 50px 15px;
+        text-align: center;
+        a {
+            font-size: 2.0em;
+            font-weight: 800;
+            border-bottom: solid 0.15em;
+        }
+        p {
+            font-size: 1.5em;
+            font-weight: 600;
+            padding: 20px 50px;
+        }
     }
 }
