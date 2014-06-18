@@ -12,13 +12,13 @@ html
     body
         .row.navbar.metro#mainnav
             a.toggle(gumby-trigger='#mainnav > ul', href='#'): i.icon-menu
-            h1.five.columns.logo: a(href='/index.html') emergency&nbsp;compliment
-            ul.seven.columns
-                li: a(href='about.html').textlink about
-                li: a(href='store.html') store
-                li: a(href='https://twitter.com/emergencycompliment'): i.icon-twitter
-                li: a(href='http://instagram.com/emergencycompliment'): i.icon-instagram
-                li: a(href='http://emergencycompliment.tumblr.com/'): i.icon-tumblr
+            h1.eight.columns.logo: a(href='/index.html') emergency&nbsp;compliment
+            ul.four.columns
+                li: a.pagelink(href='about.html').textlink about
+                li: a.pagelink(href='store.html') store
+                li: a.social(href='https://twitter.com/emergencycompliment'): i.icon-twitter
+                li: a.social(href='http://instagram.com/emergencycompliment'): i.icon-instagram
+                li: a.social(href='http://emergencycompliment.tumblr.com/'): i.icon-tumblr
 
         block body
 

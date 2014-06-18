@@ -27,14 +27,22 @@ $bg-purple-color: #9966ff;
             a {
                 @include respond(all-phones) {
                     margin: 0 20px;
+                    padding-left: 10px;
                     border: 4px solid #fff;
                     border-bottom: none;
                     text-align: left;
                 }
-                font-size: 1.5em;
+                font-size: 1.3em;
                 font-weight: 800;
+                padding: 0px;
                 &:hover { background: inherit; }
                 border-bottom: none;
+                &.pagelink {
+                    // border-bottom: 4px solid #fff;
+                }
+                &.social {
+                    font-size: 1.8em;
+                }
             }
             &:last-child {
                 a {
@@ -50,6 +58,7 @@ $bg-purple-color: #9966ff;
     text-align: center;
     font-size: 3em;
     font-weight: 600;
+    line-height: 1.3em;
 
     @include respond(all-phones) {
         font-size: 2em;
@@ -64,14 +73,18 @@ $bg-purple-color: #9966ff;
     @include respond(all-phones) {
         padding-top: 1em;
     }
-    .btn {
-        min-width: 160px;
+    .button {
         margin: 10px;
         background: none;
-        border: #fff solid 0.15em;
+        border: #fff solid 0.2em;
+        display: inline-block;
         @include box-sizing(border-box);
         a {
+            padding: 20px 0px !important;
+            min-width: 150px;
             font-weight: 800;
+            font-size: 1.5em;
+            display: inline-block;
         }
     }
 }
@@ -106,36 +119,17 @@ $bg-purple-color: #9966ff;
     }
 }
 
-#bookbox {
-    margin: 90px auto 20px;
-    width: 350px;
-
-    @include respond(all-phones) {
-        margin-top: 0;
-    }
-    @include respond(portrait-phones) {
-        width: 250px;
-    }
-}
-.showmobile {
-    display: none;
-
-    @include respond(all-phones) {
-        display: block;
-    }
-}
-.hidemobile {
-    display: block;
-
-    @include respond(all-phones) {
-        display: none;
-    }
-}
-
 #store {
+    .six.columns {
+        @include respond(all-phones) {
+            padding-top: 0px;
+            padding-bottom: 30px;
+        }
+    }
     #posterbox, #bookbox {
         display: block;
         background: $bg-pink-color;
+        @include box-shadow(#555 0px 0px 4px);
     }
     #posterbox {
         height: 300px;
@@ -150,8 +144,18 @@ $bg-purple-color: #9966ff;
             padding: 15px;
         }
     }
+
     #bookbox {
         height: 230px;
+        margin: 90px auto 20px;
+        width: 350px;
+        @include respond(all-phones) {
+            margin-top: 0;
+            width: 300px;
+        }
+        @include respond(portrait-phones) {
+            width: 250px;
+        }
         p {
             font-size: 0.7em;
             line-height: 1.0em;
@@ -169,13 +173,29 @@ $bg-purple-color: #9966ff;
             }
         }
     }
-    #togglepviz, #togglebviz { visibility: hidden; }
+    #togglepviz, #togglebviz {
+        visibility: hidden;
+        line-height: 1.2em;
+    }
     .showmobile {
+        display: none;
+
+        @include respond(all-phones) {
+            display: block;
+        }
         .posterpgph, .bookpgph {
             max-width: 500px;
             margin: 0 auto;
             text-align: center;
             font-size: 1.2em;
+            line-height: 1.2em;
+        }
+    }
+    .hidemobile {
+        display: block;
+
+        @include respond(all-phones) {
+            display: none;
         }
     }
     .columns {
@@ -184,6 +204,7 @@ $bg-purple-color: #9966ff;
         a {
             font-size: 2.0em;
             font-weight: 800;
+            padding-bottom: 3px;
             border-bottom: solid 0.15em;
         }
         p {
@@ -191,5 +212,23 @@ $bg-purple-color: #9966ff;
             font-weight: 600;
             padding: 20px 50px;
         }
+    }
+}
+
+#about {
+    p {
+        font-size: 1.3em;
+        line-height: 1.3em;
+        font-weight: 800;
+        margin-bottom: 30px;
+
+        a {
+            font-weight: inherit;
+            color: inherit;
+            border-bottom: solid 0.075em;
+        }
+    }
+    .columns {
+        padding: 15px;
     }
 }

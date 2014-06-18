@@ -1,10 +1,13 @@
 @import "compass/css3";
 
-$bg-default-color: #0080ff;
+$bg-default-color: #f0f0f0;
+$bg-blue-color: #0080ff;
 $bg-pink-color: #ff0080;
 $bg-purple-color: #9966ff;
 
-html * { color: #fff !important; }
+html * {
+    color: #fff !important;
+}
 .aboutpage {
     * {
         color: #fff !important;
@@ -16,7 +19,7 @@ html * { color: #fff !important; }
     * {
         color: #ff0080 !important;
     }
-    body { background: #d7d7d7; }
+    body { background: #F0F0F0; }
     a * { border-color: red !important; }
 }
 
@@ -26,20 +29,3 @@ body {
 
 // Navbar styles relocated to the custom grunt sass file:
 //    `bower_components/grunt/sass/_custom.scss`
-
-#about {
-    p {
-        font-size: 1.3em;
-        line-height: 1.5em;
-        font-weight: 800;
-        margin-bottom: 20px;
-        a {
-            font-weight: inherit;
-            color: inherit;
-            border-bottom: solid 0.1em;
-        }
-    }
-    .columns {
-        padding: 15px;
-    }
-}

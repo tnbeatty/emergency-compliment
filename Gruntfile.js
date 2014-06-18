@@ -21,6 +21,10 @@ module.exports = function(grunt) {
                 files: ['src/**/*.sass', 'src/**/*.scss'],
                 tasks: ['compass:styles', 'concat:styles']
             },
+            gumby: {
+                files: ['bower_components/gumby/sass/_custom.scss', 'bower_components/gumby/sass/_settings.scss'],
+                tasks: ['compass', 'concat:styles']
+            },
             scripts: {
                 files: ['src/**/*.js'],
                 tasks: ['concat:scripts']
