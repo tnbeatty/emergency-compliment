@@ -91,11 +91,20 @@ $bg-purple-color: #9966ff;
 
 .modal#buythebook {
     background: inherit;
+    // height: auto;
+
+    &.modal.active {
+        // height: auto;
+        // padding-top: 30px;
+    }
 
     .content {
         border: #fff solid 0.15em;
         background: inherit;
         z-index: 1000;
+
+        min-height: auto !important;
+        max-height: auto !important;
 
         a.close.switch {
             font-size: 2em;
@@ -232,3 +241,7 @@ $bg-purple-color: #9966ff;
         padding: 15px;
     }
 }
+
+.modal > .content { width: 50%; min-height: auto; max-height: 65%; position: relative; top: 25%; margin: 0 auto; padding: 20px; background: white; z-index: 2; overflow: auto; }
+@media only screen and (max-width: 768px) { .modal > .content { width: auto; min-height: 80%; max-height: 80%; top: 10%; } }
+@media only screen and (max-width: 767px) { .modal > .content { width: auto; min-height: 92.5%; max-height: 92.5%; top: 3.75%; } }
